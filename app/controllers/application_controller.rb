@@ -22,4 +22,10 @@ class ApplicationController < Sinatra::Base
     Post.create(params)
     redirect '/posts'
   end
+  
+   # This allows us to see our posts
+   get '/posts' do
+     @posts = Post.all
+     erb :index
+   end
 end
