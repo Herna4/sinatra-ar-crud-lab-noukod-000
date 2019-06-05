@@ -40,4 +40,20 @@ class ApplicationController < Sinatra::Base
      @post = Post.find(params["id"])
      erb :edit
    end
+   
+    # Allow to update the Record in the database
+    patch '/posts/:id' do
+      Post.update(params[:id], name: params[:name], content: params[:content])
+      @post = Post.find(params[:id])
+
+      erb :show
+    end
+
+    # Allow to delete a Record
+    delete '/posts/:id/delete' do
+      Post.delete params[:id]
+      redirect '/posts'
+    end
+
+end
 end
