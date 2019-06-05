@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   
    # this is where we make new posts that save to our database!
   post '/posts' do
-     Post.create(params)
-     redirect '/posts'
-   end
+    Post.create(params)
+    redirect '/posts'
+  end
 end
