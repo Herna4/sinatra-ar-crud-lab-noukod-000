@@ -9,6 +9,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    # erb :index
+  end
 
+  # Allow user to create a new Post
+  get '/posts/new' do
+    erb :new
   end
 end
