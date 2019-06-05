@@ -17,9 +17,5 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
   
-   # this is where we make new posts that save to our database!
-  post '/posts' do
-    Post.create(params)
-    redirect '/posts'
-  end
+  
 end
